@@ -1,0 +1,39 @@
+<%- include ("../partials/header")%>
+<div class="container">
+    <header class="jumbotron">
+        <div class="container">
+            <h1>THE BLOG APP</h1>
+            <p>Write What You Want!!!!</p>
+            <p>
+                <a class="btn btn-primary btn-lg " href="/blog/new">Add new blog</a>
+                <a class="btn btn-danger" href="/">Back home page</a>
+            </p>
+        </div>
+    </header>
+
+<div class="row">
+    <div class="col-12 mx-5">
+        <h2>
+            ALL BLOGS
+        </h2>
+    </div>
+</div>
+<div class="row" style=" display: flex; flex-wrap: wrap;">
+    <% blog.forEach(function(blog){%>
+        <div class="col-md-4 col-sm-6">
+            <div class="thumbnail">
+                <img class="img-thumbnail" src="<%=blog.image%>" alt="" srcset="">
+                <div >
+                    <h4 class="text-center"><%=blog.name%></h4>
+                </div> 
+                <p class="text-center">
+                    <a href="/blog/show/<%=blog._id%>" class="btn btn-primary">More Info.</a>
+                </p>
+            </div>
+        </div>
+    <%})%>
+</div>
+</div>
+
+
+<%- include ("../partials/footer")%>

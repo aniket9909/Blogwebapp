@@ -1,0 +1,21 @@
+<%-include ("../partials/header")%>
+<div class="container">
+    <div class="row">
+        <h1 style="text-align:center">Add Comment to <%=blog.name%></h1>
+        <div style="width:30%;margin:20px auto">
+        <form action="/blogs/<%= blog._id %>/comment" method="post">
+            <div class="form-group">
+                <input class="form-control" type="text" placeholder="text " name="comment[text]" required>
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="text" placeholder="author " name="comment[author]" required>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary btn-lg btn-block">ADD</button>
+            </div>
+            <a href="/allblogs">See Blogs</a>
+        </form>
+        </div>
+    </div>
+</div>
+<%-include ("../partials/footer")%>
